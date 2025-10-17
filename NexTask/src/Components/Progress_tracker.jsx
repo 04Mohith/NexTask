@@ -1,7 +1,19 @@
-export default function Progress_tracker() {
-    return (
-        <div>
-            <h1>Progress tracker element</h1>
-        </div>
-    )
+export default function Progress_tracker({tasks}) {
+  
+  const completedTasks = tasks.filter((t)=>t.completed).length;
+  const totaltasks = tasks.length;
+  const percentage = totaltasks == 0 ? 0: (completedTasks/totaltasks) * 100;
+  return (
+    <div className="progress-tracker">
+      <p>
+        {completedTasks} of {totaltasks} tasks completed
+      </p>
+      <div className="progress-bar">
+        <div
+          className="progress"
+          style={{ width: `${percentage}%` }}
+        ></div>
+      </div>
+    </div>
+  );
 }
