@@ -35,7 +35,7 @@ export default function App() {
       <Tasklist tasks = {tasks} 
       updateTask = {updateTask}
       deleteTask = {deleteTask}/>
-      <Progress_tracker />
+      <Progress_tracker tasks = {tasks} />
       <button>Clear all tasks</button>
     </div>
   )
